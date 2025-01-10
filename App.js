@@ -48,7 +48,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.header}>Todo List</Text>
+      <Text style={styles.header}>To Do List ♡</Text>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
@@ -74,8 +74,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#f5f5f5',
-    paddingTop: 40,
+    backgroundColor: "#fff0f5",
+    // backgroundColor: '#f5f5f5',
+    paddingTop: 97,
   },
   header: {
     fontSize: 24,
@@ -96,7 +97,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   addButton: {
-    backgroundColor: '#007AFF',
+    backgroundColor: '#ffb6c1',
     padding: 15,
     borderRadius: 5,
     alignItems: 'center',
