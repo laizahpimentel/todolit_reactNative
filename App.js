@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Footer from './components/Footer';
+
 import {
   StyleSheet,
   Text,
@@ -21,8 +23,8 @@ export default function App() {
   };
 
   const toggleTask = (id) => {
-    setTasks(tasks.map(task => 
-      task.id === id ? {...task, completed: !task.completed} : task
+    setTasks(tasks.map(task =>
+      task.id === id ? { ...task, completed: !task.completed } : task
     ));
   };
 
@@ -30,6 +32,7 @@ export default function App() {
     setTasks(tasks.filter(task => task.id !== id));
   };
 
+  {/* button for delete */ }
   const renderItem = ({ item }) => (
     <View style={styles.taskRow}>
       <TouchableOpacity style={styles.task} onPress={() => toggleTask(item.id)}>
@@ -41,11 +44,12 @@ export default function App() {
         </Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => deleteTask(item.id)}>
-        <Text style={styles.deleteBtn}>✖</Text>
+        <Text style={styles.deleteBtn}>✗</Text>
       </TouchableOpacity>
     </View>
   );
 
+  // tela to do list
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.header}>To Do List ♡</Text>
@@ -66,8 +70,11 @@ export default function App() {
         renderItem={renderItem}
         keyExtractor={item => item.id.toString()}
       />
+      <Footer />
     </SafeAreaView>
+
   );
+
 }
 
 const styles = StyleSheet.create({
@@ -128,8 +135,9 @@ const styles = StyleSheet.create({
     color: '#808080',
   },
   deleteBtn: {
-    color: 'red',
+    color: 'black',
     fontSize: 18,
     fontWeight: 'bold',
   },
+
 });
