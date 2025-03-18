@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Footer from './components/Footer';
-
 import {
   StyleSheet,
   Text,
@@ -10,6 +8,8 @@ import {
   FlatList,
   SafeAreaView
 } from 'react-native';
+
+import Footer from './components/Footer';
 
 export default function App() {
   const [task, setTask] = useState('');
